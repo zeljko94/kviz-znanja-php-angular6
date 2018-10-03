@@ -1,0 +1,32 @@
+
+
+<div class="content-wrapper">
+    <div class="row">
+      <div class="col-xs-12">
+        <hr style="height: 100px;">
+  
+        <div class="row">
+          <div class="col-xs-12"><h2 align="center">Vaš rezultat: {{score.ostvarenihBodova}} / {{score.maxBodova}}</h2></div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12"><h2 align="center">Postotak točnih: {{postotak}}%</h2></div>
+      </div>
+
+        <div class="row">
+            <div class="col-xs-6" align="right">
+              <button class="btn btn-success btn-lg" type="button" (click)="novaIgra()">
+                <i class="fa fa-play"></i>&nbsp;&nbsp;
+                NOVA IGRA
+              </button>
+            </div>
+            <div class="col-xs-6">
+              <button class="btn btn-warning btn-lg" type="button" (click)="rezultati()">
+                <i class="fa fa-list"></i>&nbsp;&nbsp;
+                PREGLED SVIH REZULTATA
+              </button>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>

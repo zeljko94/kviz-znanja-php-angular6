@@ -1,0 +1,56 @@
+
+
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>PREGLED KVIZOVA</h1>
+      <hr>
+
+      <h3 *ngIf="kvizovi.length == 0">Nema kvizova u bazi!</h3>
+      <table class="table table-bordered table-hover" *ngIf="kvizovi.length > 0">
+          <thead>
+            <tr>
+              <th>Naziv kviza</th>
+              <!--<th></th>-->
+              <th></th>
+              <th *ngIf="authService.isAdmin()"></th>
+              <th *ngIf="authService.isAdmin()"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let k of kvizovi">
+              <td>{{k.Naziv}}</td>
+              <!--<td align="center"><button class="btn btn-link" type="button" (click)="urediPitanja(k.ID)">Uredi pitanja</button></td>-->
+              <td class="text-center" style="width: 14%;">
+                <button class="btn btn-success btn-lg" type="button" (click)="zapocniKviz(k)">
+                <i class="fa fa-play"></i>
+                &nbsp;&nbsp;
+                Započni
+                </button>
+              </td>
+              <td *ngIf="authService.isAdmin()" class="text-center" style="width: 14%;">
+                <button class="btn btn-primary btn-lg" type="button" (click)="edit(k)">
+                  <i class="fa fa-edit"></i>
+                Izmjeni kviz
+                </button>
+              </td>
+              <td *ngIf="authService.isAdmin()" class="text-center" style="width: 14%;">
+                <button class="btn btn-danger  btn-lg" type="button" (click)="brisi(k.ID)">
+                  <i class="fa fa-trash"></i>
+                  &nbsp;&nbsp;
+                  Briši
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+        <button type="button" class="btn btn-lg btn-primary" (click)="dodaj()" style="margin-top: 10px;">
+          <i class="fa fa-plus"></i>
+          &nbsp;&nbsp;
+          Dodaj novi kviz
+        </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,58 @@
+
+
+<div class="content-wrapper">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>IZMJENI KVIZ</h1>
+        <hr>
+      </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-5">
+            <div [ngClass]="kviz.Naziv != '' ? 'form-group' : 'form-group has-error has-feedback'">
+                <label for="kviz.Naziv">Naziv kviza:</label>
+                <input type="text" name="kviz.Naziv" id="kviz.Naziv" class="form-control" [ngModel]="kviz.Naziv" (ngModelChange)="kviz.Naziv = $event" placeholder="Naziv kviza..."/>
+                <p style="color: red;" *ngIf="kviz.Naziv == ''">Unesite naziv kviza!</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="row">
+        <div class="col-xs-11">
+            <hr>
+            <h2>Pitanja:</h2>
+
+            <div class="form-inline">
+                <ng-container *ngFor="let p of pitanja; let i = index">
+                        <div class="input-group input-group-lg" style="padding-top:10px;padding-bottom:10px;">
+                                <div class="input-group-btn">
+                                    {{i+1}}. &nbsp;
+                                    <input type="checkbox" name="selectedPitanjaChk" value="{{p.ID}}"  [checked]="selectedPitanja.includes(p.ID)" />
+                                </div>
+                                <input type="text"  class="form-control" value="{{p.Text}}" disabled/>
+                            </div>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+
+
+  <hr>
+<button type="button" class="btn btn-primary btn-lg" (click)="save()">
+    <i class="fa fa-save"></i>
+    &nbsp;&nbsp;
+    Spremi izmjene
+</button>
+</div>
+
+
+
+
+
+  

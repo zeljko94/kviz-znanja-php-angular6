@@ -1,0 +1,18 @@
+
+    <div id="wrapper">
+
+        <button type="button" class="btn btn-dark pull-right" (click)="logout()" style="margin-right: 25px;margin-top: 25px;" *ngIf="authService.isLoggedIn">
+            <i class="fa fa-sign-out"></i>&nbsp;&nbsp;
+            Logout
+        </button>
+        <app-sidebar *ngIf="authService.isLoggedIn"></app-sidebar>
+        
+        <router-outlet></router-outlet>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="assets/template/vendor/jquery/jquery.min.js"></script>
+    <script src="assets/template/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Menu Toggle Script -->

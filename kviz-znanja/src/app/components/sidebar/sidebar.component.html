@@ -1,0 +1,22 @@
+<div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        <li class="sidebar-brand">
+            <a [routerLink]="['/kvizovi']" style="font-size: 35px;">
+                Kviz znanja
+            </a>
+        </li>
+        <li>
+            <a [routerLink]="['/kvizovi']" style="font-size: 20px;"><i class="fa fa-list"></i>&nbsp;&nbsp;Kvizovi</a>
+        </li>
+        <li>
+            <a [routerLink]="['/pitanje']" style="font-size: 20px;"><i class="fa fa-question"></i>&nbsp;&nbsp;&nbsp;Pitanja</a>
+        </li>
+        <li>
+            <a [routerLink]="['/rezultati']" style="font-size: 20px;"><i class="fa fa-trophy"></i>&nbsp;&nbsp;Rezultati</a>
+        </li>
+        <li *ngIf="authService.isAdmin()">
+            <a [routerLink]="['/users']" style="font-size: 20px;"><i class="fa fa-users"></i>&nbsp;&nbsp;Korisnici</a>
+        </li>
+
+    </ul>
+</div>

@@ -1,0 +1,69 @@
+
+
+<div class="content-wrapper">
+    <div class="row">
+      <div class="col-xs-12">
+        <h1>DODAJ PITANJE</h1>
+        <hr>
+      </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-xs-10">
+            <div [ngClass]="Pitanje != '' ? 'form-group' : 'form-group has-error has-feedback'">
+                <label for="Pitanje">Pitanje:</label>
+                <input type="text" name="Pitanje" id="Pitanje" class="form-control" [ngModel]="Pitanje" (ngModelChange)="Pitanje = $event" placeholder="Pitanje..."/>
+                <p style="color: red;" *ngIf="Pitanje == ''">Unesite pitanje!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-10">
+            <div [ngClass]="Odg1 != '' ? 'form-group' : 'form-group has-error has-feedback'">
+                <label for="Odg1">Odgovor 1:</label>
+                <input type="text" name="Odg1" id="Odg1" class="form-control" [ngModel]="Odg1" (ngModelChange)="Odg1 = $event" placeholder="Odgovor 1..."/>
+                <label><input type="radio" name="OdgRadio" [value]="1"  [(ngModel)]="TocanOdg" />&nbsp;Točan odgovor?</label>
+                <p style="color: red;" *ngIf="Odg1 == ''">Unesite odgovor 1!</p>
+            </div>
+        </div>
+
+
+        <div class="col-xs-10">
+            <div [ngClass]="Odg2 != '' ? 'form-group' : 'form-group has-error has-feedback'">
+                <label for="Odg2">Odgovor 2:</label>
+                <input type="text" name="Odg2" id="Odg2" class="form-control" [ngModel]="Odg2" (ngModelChange)="Odg2 = $event" placeholder="Odgovor 2..."/>
+                <label><input type="radio" name="OdgRadio" [value]="2" [(ngModel)]="TocanOdg" />&nbsp;Točan odgovor?</label>
+                <p style="color: red;" *ngIf="Odg2 == ''">Unesite odgovor 2!</p>
+            </div>
+        </div>
+
+
+        <div class="col-xs-10">
+            <div [ngClass]="Odg3 != '' ? 'form-group' : 'form-group has-error has-feedback'">
+                <label for="Odg3">Odgovor 3:</label>
+                <input type="text" name="Odg3" id="Odg3" class="form-control" [ngModel]="Odg3" (ngModelChange)="Odg3 = $event" placeholder="Odgovor 3..."/>
+                <label><input type="radio" name="OdgRadio" [value]="3" [(ngModel)]="TocanOdg" />&nbsp;Točan odgovor?</label>
+                <p style="color: red;" *ngIf="Odg3 == ''">Unesite odgovor 3!</p>
+            </div>
+        </div>
+
+
+        <div class="col-xs-10">
+            <div [ngClass]="Odg4 != '' ? 'form-group' : 'form-group has-error has-feedback'">
+                <label for="Odg4">Odgovor 4:</label>
+                <input type="text" name="Odg4" id="Odg4" class="form-control" [ngModel]="Odg4" (ngModelChange)="Odg4 = $event" placeholder="Odgovor 4..."/>
+                <label><input type="radio" name="OdgRadio" [value]="4" [(ngModel)]="TocanOdg" />&nbsp;Točan odgovor?</label>
+                <p style="color: red;" *ngIf="Odg4 == ''">Unesite odgovor 4!</p>
+            </div>
+        </div>
+    </div>
+
+
+    
+    <button type="button" class="btn btn-success btn-lg" (click)="save()">
+        <i class="fa fa-save"></i>&nbsp;&nbsp;
+        Spremi
+    </button>
+  </div>

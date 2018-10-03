@@ -1,0 +1,52 @@
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>PREGLED KORISNIKA</h1>
+      <hr>
+
+
+      
+      <div class="row">
+        <div class="col-xs-4">
+          <input class="form-control" [ngModel]="searchTxt" (ngModelChange)="searchTxt = $event;applyFilter()" type="text" placeholder="Search..." aria-label="Search">
+        </div>
+      </div>
+      <hr>
+
+      <table class="table table-hover table-bordered">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Ime</th>
+            <th>Prezime</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Privilegije</th>
+            <th *ngIf="authService.isAdmin()"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let u of users; let i = index">
+            <td>{{i+1}}</td>
+            <td>{{u.Ime}}</td>
+            <td>{{u.Prezime}}</td>
+            <td>{{u.Email}}</td>
+            <td>{{u.Password}}</td>
+            <td>{{u.Privilegije}}</td>
+            <td *ngIf="authService.isAdmin()" class="text-center" style="width: 14%">
+              <button class="btn btn-danger btn-lg" (click)="brisi(u.ID)">
+                <i class="fa fa-trash"></i>&nbsp;&nbsp;
+                Briši
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <button class="btn btn-primary btn-lg" (click)="dodaj()">
+        <i class="fa fa-plus"></i>&nbsp;&nbsp;
+        Dodaj korisnika
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,47 @@
+<div class="content-wrapper">
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>DODAJ KORISNIKA</h1>
+      <hr>
+      
+
+      <div [ngClass]="user.Ime != '' ? 'form-group' : 'form-group has-feedback has-error'">
+        <label>Ime:</label>
+        <input class="form-control" type="text" [ngModel]="user.Ime" (ngModelChange)="user.Ime = $event" />
+        <p style="color: red;" *ngIf="user.Ime == ''">Unesite ime!</p>
+      </div>
+
+      <div [ngClass]="user.Prezime != '' ? 'form-group' : 'form-group has-feedback has-error'">
+        <label>Prezime:</label>
+        <input class="form-control" type="text" [ngModel]="user.Prezime" (ngModelChange)="user.Prezime = $event" />
+        <p style="color: red;" *ngIf="user.Prezime == ''">Unesite prezime!</p>
+      </div>
+
+      <div [ngClass]="user.Email != '' ? 'form-group' : 'form-group has-feedback has-error'">
+        <label>Email:</label>
+        <input class="form-control" type="text" [ngModel]="user.Email" (ngModelChange)="user.Email = $event" />
+        <p style="color: red;" *ngIf="user.Email == ''">Unesite email!</p>
+      </div>
+
+      <div [ngClass]="user.Password != '' ? 'form-group' : 'form-group has-feedback has-error'">
+        <label>Password:</label>
+        <input class="form-control" type="password" [ngModel]="user.Password" (ngModelChange)="user.Password = $event" />
+        <p style="color: red;" *ngIf="user.Password == ''">Unesite password!</p>
+      </div>
+
+      <div class="form-group">
+        <label>Privilegije:</label>
+        <select class="form-control" style="height: 35px;" [ngModel]="user.Privilegije" (ngModelChange)="user.Privilegije = $event" [value]="user.Privilegije">
+          <option value="admin">Admin</option>
+          <option value="korisnik">Korisnik</option>
+        </select>
+      </div>
+
+      <button class="btn btn-primary btn-lg" (click)="spremi()">
+        <i class="fa fa-save"></i>
+        &nbsp;&nbsp;
+        Spremi
+      </button>
+    </div>
+  </div>
+</div>

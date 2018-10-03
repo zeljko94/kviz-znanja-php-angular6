@@ -1,0 +1,41 @@
+
+
+<div class="content-wrapper">
+    <div class="row">
+      <div class="col-xs-12" align="center">
+        <h1>{{kviz.Naziv}}</h1>
+        <hr>
+
+        <div class="row">
+          <div class="col-xs-12">
+
+            <div class="row">
+              <div class="col-xs-12" align="center">
+                <h1><b>{{trenutnoPitanje?.Text}}</b></h1>
+                <hr>
+              </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-6" align="right">
+                  <button style="margin: 17px 7px 17px 7px;" class="btn btn-primary btn-lg" (click)="odgovorClick(trenutnoPitanje?.odgovori[0])">{{trenutnoPitanje?.odgovori[0].Text}}</button>
+                </div>
+                <div class="col-xs-6" align="left">
+                    <button style="margin: 17px 7px 17px 7px;" class="btn btn-primary btn-lg" (click)="odgovorClick(trenutnoPitanje?.odgovori[1])">{{trenutnoPitanje?.odgovori[1].Text}}</button>
+                </div>
+            </div>
+
+              <div class="row">
+                  <div class="col-xs-6" align="right">
+                      <button style="margin: 17px 7px 17px 7px;" class="btn btn-primary btn-lg" (click)="odgovorClick(trenutnoPitanje?.odgovori[2])">{{trenutnoPitanje?.odgovori[2].Text}}</button>
+                  </div>
+                  <div class="col-xs-6" align="left">
+                    <button style="margin: 17px 7px 17px 7px;" class="btn btn-primary btn-lg" (click)="odgovorClick(trenutnoPitanje?.odgovori[3])">{{trenutnoPitanje?.odgovori[3].Text}}</button>
+                  </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
